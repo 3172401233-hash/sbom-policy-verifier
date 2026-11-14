@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {"id": "R-GPL", "type": "deny_license", "licenses": ["GPL-3.0-only"],
+     "message": "GPL components are not allowed in distribution builds"},
+    {"id": "R-LEGACY", "type": "deny_version",
+     "purl": "pkg:npm/legacy-utils", "version_range": "<1.0.0"},
+    {"id": "R-SUPPLIER", "type": "deny_missing_supplier"}
+  ],
+  "exceptions": [
+    {"id": "EX-LEGACY-Q1", "rule_id": "R-LEGACY",
+     "purl": "pkg:npm/legacy-utils",
+     "reason": "replacement scheduled in Q1, network isolated",
+     "expires_at": "2030-03-31T23:59:59Z"}
+  ]
+}

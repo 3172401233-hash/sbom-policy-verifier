@@ -1,0 +1,18 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "components": [
+    {"bom-ref": "app", "name": "gateway", "version": "4.0.0",
+     "purl": "pkg:npm/gateway@4.0.0", "supplier": {"name": "Acme Corp"},
+     "licenses": [{"license": {"id": "Apache-2.0"}}]},
+    {"bom-ref": "legacy", "name": "legacy-utils", "version": "0.9.1",
+     "purl": "pkg:npm/legacy-utils@0.9.1",
+     "licenses": [{"expression": "MIT OR GPL-3.0-only"}]},
+    {"bom-ref": "naked", "name": "unknown-dep", "version": "0.1",
+     "purl": "pkg:npm/unknown-dep@0.1"}
+  ],
+  "dependencies": [
+    {"ref": "app", "dependsOn": ["legacy", "naked"]}
+  ]
+}
